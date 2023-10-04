@@ -38,7 +38,7 @@ ul {
     }
 
 .nav a {
-    padding: 10px 15px;
+    padding: 10px;
     text-align: left;
     text-decoration: none;
     display: block;
@@ -52,4 +52,54 @@ ul {
     color: #000000;
     padding: 10px;
 }
+
+/* Apply styles to the wrapper div */
+.wrapper {
+    display: flex;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+/* Apply styles to the left sidebar */
+.left-sidebar {
+    width: 110px; /* Adjust the width as needed */
+    background-color: #999;
+    border-radius: 10px; 
+    color: white;
+    padding: 20px;
+}
+
+/* Apply styles to the main content */
+.content {
+    flex: 1;
+    background-color: #fff; /* Example background color for the main content */
+    padding: 20px;
+}
+
+/* Apply styles to the right sidebar */
+.right-sidebar {
+    width: 110px; /* Adjust the width as needed */
+    border-radius: 10px; 
+    background-color: #999;
+    padding: 20px;
+}
+
+.footer {
+    background-color: #999; 
+    border-radius: 10px; 
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.footer a {
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    color: #000000;
+    font-size: 1.4em;
+    font-weight: bold;
+    }
+
 
