@@ -1,14 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,300&display=swap');
 * {
     font-family: 'DM Sans', sans-serif;
     box-sizing: border-box;
-  }
+    }
 
 .header {
+    position: sticky;
     background-color: #999; 
     border-radius: 10px; 
     padding: 20px; 
     text-align: left;
-}
+    display: flex; /* Use flexbox to keep everything on one line */
+    justify-content: space-between; /* Space items horizontally */
+    align-items: center; /* Center items vertically */
+    }
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+     /* 
+       list-style: none = No marker is shown 
+     */
+    }
+
+.logo {
+    margin: 0;
+    font-size: 1.1em;
+      }
+
+.nav {
+    margin-top: 5px;
+    list-style: none;
+    padding: 0;
+    display: flex; /* Use flexbox to align items horizontally */
+    gap: 10px; /* Add spacing between items */
+    }
+
+.nav a {
+    padding: 10px 15px;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    color: #000000;
+    font-size: 1.5em;
+    font-weight: bold;
+    }
 
