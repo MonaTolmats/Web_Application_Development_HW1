@@ -8,7 +8,7 @@
     position: sticky;
     background-color: #999; 
     border-radius: 10px; 
-    padding: 20px; 
+    padding: 20px;
     text-align: left;
     display: flex; /* Use flexbox to keep everything on one line */
     justify-content: space-between; /* Space items horizontally */
@@ -26,7 +26,7 @@ ul {
 
 .logo {
     margin: 0;
-    font-size: 1.1em;
+    font-size: 1em;
       }
 
 .nav {
@@ -43,7 +43,13 @@ ul {
     text-decoration: none;
     display: block;
     color: #000000;
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: bold;
     }
+
+.separator {
+    font-size: 1.4em; /* Set the font size the same as the header */
+    color: #000000;
+    padding: 10px;
+}
 
