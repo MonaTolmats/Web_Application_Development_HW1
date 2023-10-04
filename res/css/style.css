@@ -8,6 +8,7 @@
     position: sticky;
     background-color: #999; 
     border-radius: 10px; 
+    border: 10px;
     padding: 20px;
     text-align: left;
     display: flex; /* Use flexbox to keep everything on one line */
@@ -19,9 +20,6 @@ ul {
     margin: 0;
     padding: 0;
     list-style: none;
-     /* 
-       list-style: none = No marker is shown 
-     */
     }
 
 .logo {
@@ -53,35 +51,78 @@ ul {
     padding: 10px;
 }
 
-/* Apply styles to the wrapper div */
 .wrapper {
     display: flex;
     padding-top: 9px;
     padding-bottom: 9px;
 }
 
-/* Apply styles to the left sidebar */
 .left-sidebar {
-    width: 110px; /* Adjust the width as needed */
+    width: 100px; 
     background-color: #999;
     border-radius: 10px; 
-    color: white;
     padding: 20px;
 }
 
-/* Apply styles to the main content */
+.right-sidebar {
+    width: 100px; 
+    border-radius: 10px; 
+    background-color: #999;
+    padding: 20px;
+}
+
 .content {
     flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #fff; /* Example background color for the main content */
-    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    
 }
 
-/* Apply styles to the right sidebar */
-.right-sidebar {
-    width: 110px; /* Adjust the width as needed */
-    border-radius: 10px; 
-    background-color: #999;
+.post {
+    background-color: rgb(201, 201, 201); /* Example background color for the main content */
+    border-radius: 20px; 
+    width: 350px;
     padding: 20px;
+    margin-bottom: 30px;
+}
+
+.post_header {
+    display: flex; /* Use flexbox to keep everything on one line */
+    justify-content: space-between; /* Space items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 5px;
+}
+
+.post_body {
+    align-items: center; /* Center items vertically */
+}
+
+.post_logo {
+    align-items: left;
+    width: 28px;
+    height: 28px;
+}
+
+.post_image {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    align-items: center;
+    margin: 5px;
+}
+
+.post_text {
+    font-size: 16px;
+}
+
+.post_date {
+    font-size: 12px;
 }
 
 .footer {
