@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100&display=swap');
+
+* {
+    font-family: 'DM Sans', sans-serif;
+    box-sizing: border-box;
+  }
+
 .header {
     background-color: #999; 
     border-radius: 10px; 
     padding: 20px; 
-    text-align: center; 
+    text-align: left;
 }
+
