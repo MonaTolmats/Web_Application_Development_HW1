@@ -45,6 +45,12 @@ ul {
     font-weight: bold;
     }
 
+.nav a:hover {
+    border-radius: 20px;
+    /* background-color: #fff; */
+    background: radial-gradient(#e18282, #999);
+}
+
 .separator {
     font-size: 1.4em; /* Set the font size the same as the header */
     color: #000000;
