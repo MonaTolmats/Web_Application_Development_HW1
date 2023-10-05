@@ -1,29 +1,10 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 10;
     background-color: #f0f0f0;
     text-align: center;
 }
 
-.header {
-    margin:10px;
-    background-color: #808080;
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.header img {
-    cursor: pointer;
-}
-
-.header a {
-    color: black;
-    text-decoration: none;
-}
 
 .content {
     background-color: #dddddd;
@@ -43,10 +24,12 @@ body {
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 20px;
+    resize: none;
 }
 
 .file-input {
     display: none;
+    margin-bottom:50px;
 }
 
 .file-label {
@@ -65,4 +48,8 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.filetext {
+    padding: 5%;
 }
