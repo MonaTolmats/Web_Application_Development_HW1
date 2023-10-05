@@ -1,9 +1,38 @@
+.container {
+    display: flex;
+    padding: 20px;
+    align-items: flex-start; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    min-height: 100vh; /* Ensure the container takes up at least the viewport height */
+}
+
 .box{
     background-color: #dddddd;
     border-radius: 10px; 
-    padding: 20px; 
+    padding: 60px; 
+    padding-top: 20px;
+    padding-bottom: 40px;
     text-align: center;
-    margin: 30%;
-    margin-top: 30px;
+    max-width: 400px;
+    min-width: 400px;
+
+}
+
+.form-group{
+    margin: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .box {
+        width: 80%; /* Adjust the width for smaller screens */
+        margin: 10px; /* Adjust the margin for smaller screens */
+    }
+}
+
+
+
+a:hover{
+    color: darkblue;
+    font-weight: bold;
 }
 

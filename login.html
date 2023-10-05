@@ -13,6 +13,7 @@
     <title>Log In</title>
 </head>
 <body>
+
     <header class="header">
         <ul class="nav">
             <li><a href="#">Home</a></li>
@@ -23,39 +24,37 @@
         <a class="logo" href="#"><img src="res/images/icon.ico" width="50" height="50" alt="My picture"></a>
     </header>
 
-<div class="login-container">
-    <div class="box">
-        <p>Welcome to PostIt</p>
-        <p>Create an account<br /> or <br />Please log in:</p>
+
+    <div class = "container"> 
+        <div class="box">
+            <p>Welcome to PostIt</p>
+            <a href="">Create an account</a>
+            <p> or <br />
+                Please log in:
+            </p>
+            
+
+            <form action="login_process.php" class = "form">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" placeholder="Email" required>
+                </div>
 
 
-        <form action="login_process.php" class = "form">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
 
 
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                    
+                </div>
 
-
-            <div class="form-group">
-                <button type="submit">Login</button>
-                
-            </div>
-
-        </form>
-
-
-        <p>Forget password</p>
-
+            </form>
+            <a href="">Forget password</a>
+        </div>
     </div>
-</div>
 
 
-    
 </body>
 </html>
