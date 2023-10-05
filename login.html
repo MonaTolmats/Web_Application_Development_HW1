@@ -31,22 +31,25 @@
             <p> or <br />
                 Please log in:
             </p>
+            <form action="action_page.php" method="post"> 
             
+                <div class = "form-container">
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" placeholder="Email" required>
+                    </div>
 
-            <form action="login_process.php" class = "form">
-                <div class="form-group">
-                    <input type="text" id="username" name="username" placeholder="Email" required>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <a href="index.html">
+                            <button class = "button" type="submit">Login</button>
+                        </a>
+                    </div>
                 </div>
-
-
-                <div class="form-group">
-                    <input type="password" id="password" name="password" placeholder="Password" required>
-                </div>
-            
-                <a href = "index.html" > <button class = "button" >Login</button> </a>
-            
-
             </form>
+
             <a class = "link" href="">Forget password</a>
         </div>
     </div>
