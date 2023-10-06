@@ -1,4 +1,7 @@
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
     margin: 10;
     background-color: #f0f0f0;
@@ -14,7 +17,6 @@ body {
     border-radius: 10px;
     margin: 20px auto;
     max-width: 400px;
-    min-width: 400px;
     text-align: center;
 }
 
@@ -52,4 +54,38 @@ body {
 
 .filetext {
     padding: 5%;
+}
+
+.post-button:hover {
+    background-color: #342394; 
+}
+
+.header > .nav {
+    list-style-type: none;
+    padding: 0;
+}
+
+.box + textarea {
+    border: 2px solid #ccc;
+}
+
+.filetext ~ .file-label {
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .content {
+        padding: 20px; /* Adjust the padding as needed */
+        max-width: 100%; /* Make sure it doesn't exceed the viewport */
+        text-align: left; /* Align text to the left on mobile */
+    }
+
+    .content textarea {
+        height: 60px; /* Adjust the height as needed */
+        font-size: 16px; /* Adjust the font size as needed */
+    }
+
+    .file-label, .file-input, .post-button {
+        font-size: 14px; /* Adjust the font size as needed */
+    }
 }

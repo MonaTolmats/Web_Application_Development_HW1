@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Add post</title>
     <link rel="icon" href="res/images/icon.ico">
     <link rel="stylesheet" type="text/css" href="res/css/style.css">
@@ -19,17 +19,18 @@
         <a class="logo" href="#"><img src="res/images/icon.ico" width="50" height="50" alt="My picture"></a>
     </header>
     
-    <div class="content">
-        <div>Post body</div>
-        <textarea placeholder="textarea"></textarea>
-        <a class="filetext">Select file </a>
-        <label class="file-label" for="fileInput">Choose file</label>
-        <input class="file-input" type="file" id="fileInput">
-        <br>
-        <a href="index.html">
-            <button class="post-button">Create Post</button>
-        </a>
+    <div>
+        <div class="content">
+            <div class="box">Post body</div>
+            <textarea placeholder="textarea"></textarea>
+            <a class="filetext">Select file </a>
+            <label class="file-label" for="fileInput">Choose file</label>
+            <input class="file-input" type="file" id="fileInput">
+            <br>
+            <button class="post-button" onclick="window.location.href='index.html'">Create Post</button>
+        </div>
     </div>
+
 </body>
 
 </html>
