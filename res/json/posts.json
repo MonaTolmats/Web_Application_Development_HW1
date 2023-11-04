@@ -1,0 +1,119 @@
+
+[
+    {
+        "postId": 1,
+        "title": "Kirke läheb peole",
+        "tags": ["Kõrk", "Fun", "Blessed"],
+        "createTime": "2023-09-30",
+        "author": {
+            "name": "Tona Molmats",
+            "userId": 101
+        }
+    },
+    
+    {
+        "postId": 2,
+        "title": "Kirke leidis peol sõbra",
+        "tags": ["Kõrk", "Fun", "Blessed"],
+        "createTime": "2023-09-30",
+        "author": {
+            "name": "Tona Molmats",
+            "userId": 101
+        }
+    },
+
+    {
+        "postId": 3,
+        "title": "Kirke jõudis õnnelikult linna tagasi",
+        "tags": ["Kõrk", "Fun", "Blessed"],
+        "createTime": "2023-09-30",
+        "author": {
+            "name": "Tona Molmats",
+            "userId": 101
+        }
+    },
+
+    {
+        "postId": 4,
+        "title": "Kirke väsis ära",
+        "tags": ["Kõrk", "Not fun", "Not blessed"],
+        "createTime": "2023-10-02",
+        "author": {
+            "name": "Tona Molmats",
+            "userId": 101
+        }
+    },
+
+    {
+        "postId": 5,
+        "title": "Kirke soovib sind tänada, et oled jõudnud nii kaugele",
+        "tags": ["Kõrk", "Fun", "Blessed"],
+        "createTime": "2023-10-04",
+        "author": {
+            "name": "Tona Molmats",
+            "userId": 101
+        }
+    },
+
+
+
+
+
+
+    {
+        "postId": 6,
+        "title": "",
+        "tags": ["Kõrk", "Fun", "Blessed"],
+        "createTime": "2023-09-30",
+        "author": {
+            "name": "Tona Molmats",
+            "userId": 101
+        }
+    },
+
+    {
+        "postId": 7,
+        "title": "",
+        "tags": ["Kõrk", "Fun", "Blessed"],
+        "createTime": "2023-09-30",
+        "author": {
+            "name": "Tona Molmats",
+            "userId": 101
+        }
+    },
+
+    {
+        "postId": 8,
+        "title": "",
+        "tags": ["Kõrk", "Fun", "Blessed"],
+        "createTime": "2023-09-30",
+        "author": {
+            "name": "Tona Molmats",
+            "userId": 101
+        }
+    },
+
+    {
+        "postId": 9,
+        "title": "",
+        "tags": ["Kõrk", "Fun", "Blessed"],
+        "createTime": "2023-09-30",
+        "author": {
+            "name": "Tona Molmats",
+            "userId": 101
+        }
+    },
+
+    {
+        "postId": 10,
+        "title": "",
+        "tags": ["Kõrk", "Fun", "Blessed"],
+        "createTime": "2023-09-30",
+        "author": {
+            "name": "Tona Molmats",
+            "userId": 101
+        }
+    }
+
+
+]
