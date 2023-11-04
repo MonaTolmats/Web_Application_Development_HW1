@@ -1,8 +1,11 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     fetchPosts();
 });
 
 function fetchPosts() {
+
+    /*
     fetch('https://api.jsonbin.io/v3/b/6546365b0574da7622c1e9d7/latest', {
         method: 'GET',
         headers: {
@@ -10,6 +13,9 @@ function fetchPosts() {
             // Add other headers as necessary
         }
     })
+    */
+
+    fetch('posts.json')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok: ' + response.statusText);
@@ -17,7 +23,8 @@ function fetchPosts() {
         return response.json();
     })
     .then(data => {
-        const posts = data.record; // Assuming 'data.record' contains your posts
+        //const posts = data.record; // Assuming 'data.record' contains your posts
+        const posts = data;
         const postsContainer = document.getElementById('postsContainer');
         posts.forEach(post => {
             const postElement = createPostElement(post);
