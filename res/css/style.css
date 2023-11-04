@@ -25,7 +25,10 @@ ul {
 .logo {
     margin: 0;
     font-size: 1em;
-      }
+    cursor: pointer;
+    background: none;
+    border: none;
+    }
 
 .nav {
     margin-top: 5px;
@@ -160,4 +163,34 @@ ul {
         margin-bottom: 30px;
     }
 }
+
+/* Style the dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    float: right;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 1;
+    right: 0;
+    left: auto;
+  }
+
+  .dropdown-content a {
+    padding: 10px 2px 10px 2px; /* Adjust this padding as needed */
+    display: block;
+  }
+  
+  /* Show the dropdown content when the logo is clicked */
+  .logo:focus + .dropdown-content {
+    display: 'block';
+  }
+
 
