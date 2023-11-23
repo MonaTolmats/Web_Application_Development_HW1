@@ -1,20 +1,26 @@
 <template>
   <div class="signup">
     <h1>Signup Page</h1>
+    <div class = container>
+          <SignupBox></SignupBox>
+    </div>
   </div>
 </template>
 
 <script>
-import Posts from '@/components/Posts.vue'
+import SignupBox from '@/components/SignupBox.vue'
 
 export default {
   name: 'SignupView',
   components: {
-    Posts
+    SignupBox
   }
 }
 </script>
 
 <style scoped>
-
+.container{
+  display: flex;
+  justify-content: center;
+}
 </style>
