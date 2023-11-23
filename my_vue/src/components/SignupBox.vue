@@ -1,6 +1,9 @@
 <template>
   <div class="container">
+
+    <!-- ei lase submittida kui validatePassword ei kehti -->
     <form @submit.prevent="validatePassword">
+
       <h3>Sign In</h3>
       <div class="input">
         <label>Email address</label>
@@ -11,6 +14,7 @@
         <input type="password" class="textbox" v-model="password" />
       </div>
 
+    <!-- Kui passwordError ei ole tühi string siis lisab kuvatavasse listi iga eksisteeriva errori -->
       <ul class="error" v-if="passwordError">
         <li v-for="error in getErrors()" :key="error">{{ error }}</li>
       </ul>
@@ -40,6 +44,7 @@ export default {
         // Redirect only after successful sign-in (you may want to handle authentication here)
       }
     },
+    //Kõik tingimused
     getErrors() {
       const lengthRegex = /^.{8,15}$/;
       const uppercaseRegex = /[A-Z]/;
@@ -49,7 +54,9 @@ export default {
       const underscoreRegex = /_/;
 
       const errorMessages = [];
-if (!lengthRegex.test(this.password)) {
+
+      //Kontrollib iga tingimuse. kui eksisteerib siis lisab listi selle tingimuse teksti
+      if (!lengthRegex.test(this.password)) {
         errorMessages.push('Your password must have at least 8 characters and less than 15 characters');
       }
       if (!uppercaseRegex.test(this.password)) {
@@ -111,7 +118,7 @@ label {
 }
 
 .error {
-  color: red;
+  color: rgb(112, 0, 0);
   margin-top: 5px;
   list-style-type: none; /* Remove default list styling */
   padding: 0; /* Remove default padding for the list */
