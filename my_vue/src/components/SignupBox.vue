@@ -19,7 +19,7 @@
         <li v-for="error in getErrors()" :key="error">{{ error }}</li>
       </ul>
 
-      <button type="submit" class="submit_button">Sign In</button>
+      <button type="submit" class="submit_button">Sign Up</button>
     </form>
   </div>
 </template>
@@ -89,6 +89,7 @@ export default {
   border-radius: 10px;
   min-width: 800px;
   min-height: 200px; /* Set a minimum height */
+margin-bottom: 50px;
   margin: 20px;
   padding: 20px;
   background-color: #999;
@@ -118,7 +119,7 @@ label {
 }
 
 .error {
-  color: rgb(112, 0, 0);
+  color: rgb(194, 10, 10);
   margin-top: 5px;
   list-style-type: none; /* Remove default list styling */
   padding: 0; /* Remove default padding for the list */
