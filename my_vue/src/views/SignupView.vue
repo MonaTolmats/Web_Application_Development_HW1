@@ -1,6 +1,6 @@
 <template>
-  <div class="posts">
-    <Posts></Posts>
+  <div class="signup">
+    <h1>Signup Page</h1>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import Posts from '@/components/Posts.vue'
 
 export default {
-  name: 'PostsView',
+  name: 'SignupView',
   components: {
     Posts
   }

@@ -2,7 +2,7 @@
   <nav class = nav>
     <div>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">Posts</router-link>
+      <router-link to="/signup">Signup</router-link>
     </div>
     
   </nav>
