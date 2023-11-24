@@ -19,7 +19,9 @@
   <footer-component></footer-component>
 </template>
 
+
 <script>
+import { mapState, mapActions} from 'vuex';
 import FooterComponent from '@/components/Footer.vue'
 import LeftSidebar from '@/components/LeftSidebar.vue'
 import RightSidebar from '@/components/RightSidebar.vue'
@@ -27,25 +29,18 @@ import RightSidebar from '@/components/RightSidebar.vue'
 export default {
   name: 'PostsContainer',
   components: {
-    FooterComponent, LeftSidebar, RightSidebar
+    LeftSidebar,
+    RightSidebar,
+    // ... your components such as FooterComponent, LeftSidebar, RightSidebar
   },
-  data() {
-    return {
-      posts: []
-    };
+  computed: {
+    ...mapState(['posts']) // Maps state.posts to this.posts
   },
-  mounted() {
-    this.fetchPosts();
+  created() {
+    this.fetchPosts(); // Fetch posts when the component is created
   },
   methods: {
-    fetchPosts() {
-      fetch('/posts.json') // Replace with the actual path to your JSON file
-        .then(response => response.json())
-        .then(data => {
-          this.posts = data;
-        })
-        .catch(error => console.error('Error fetching posts:', error));
-    }
+    ...mapActions(['fetchPosts']) // Maps actions.fetchPosts to this.fetchPosts
   }
 }
 </script>

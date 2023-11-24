@@ -1,14 +1,22 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
 
 export default createStore({
   state: {
-  },
-  getters: {
+    posts: []
   },
   mutations: {
+    setPosts(state, posts) {
+      state.posts = posts;
+    }
   },
   actions: {
-  },
-  modules: {
+    fetchPosts({ commit }) {
+      fetch('/posts.json')
+        .then(response => response.json())
+        .then(data => {
+          commit('setPosts', data);
+        })
+        .catch(error => console.error('Error fetching posts:', error));
+    }
   }
-})
+});
