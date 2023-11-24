@@ -1,4 +1,5 @@
 <template>
+
   <div class="container">
     <left-sidebar></left-sidebar>
     <div id="postsContainer">
@@ -11,17 +12,19 @@
           <img v-if="post.image" class="post_image" :src="post.image" :alt="post.title">
           <p class="post_text">{{ post.title }}</p>
           <img class="post_logo" src="/like.png" alt="Like button">
+          <p>Likes: {{ getLikes }}</p>
         </div>
       </div>
     </div>
     <right-sidebar></right-sidebar>
   </div>
+  <button @click="resetAllLikes">Reset All Likes</button>
   <footer-component></footer-component>
 </template>
 
 
 <script>
-import { mapState, mapActions} from 'vuex';
+import { mapState, mapActions, mapGetters, mapMutations} from 'vuex';
 import FooterComponent from '@/components/Footer.vue'
 import LeftSidebar from '@/components/LeftSidebar.vue'
 import RightSidebar from '@/components/RightSidebar.vue'
@@ -34,16 +37,19 @@ export default {
     // ... your components such as FooterComponent, LeftSidebar, RightSidebar
   },
   computed: {
-    ...mapState(['posts']) // Maps state.posts to this.posts
+    ...mapState(['posts', 'count']), // Maps state.posts to this.posts
+    ...mapGetters(['getLikes']),
   },
   created() {
     this.fetchPosts(); // Fetch posts when the component is created
   },
-  methods: {
-    ...mapActions(['fetchPosts']) // Maps actions.fetchPosts to this.fetchPosts
+  methods: { // Maps actions.fetchPosts to this.fetchPosts
+    ...mapMutations(['increment', 'resetLikes']),
+    ...mapActions(['fetchPosts', 'incrementAsync', 'incrementLikesAsync', 'resetAllLikes']),
   }
 }
 </script>
+
 
 
 <style scoped>
