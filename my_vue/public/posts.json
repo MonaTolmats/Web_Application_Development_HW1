@@ -3,7 +3,7 @@
     {
         "postId": 1,
         "title": "Kirke läheb peole",
-        "image": "res/images/kirke1.jpg",
+        "image": "/kirke1.jpg",
         "tags": ["Kõrk", "Fun", "Blessed"],
         "createTime": "2023-09-30",
         "author": {
@@ -15,7 +15,7 @@
     {
         "postId": 2,
         "title": "Kirke leidis peol sõbra",
-        "image": "res/images/kirke2.jpg",
+        "image": "/kirke2.jpg",
         "tags": ["Kõrk", "Fun", "Blessed"],
         "createTime": "2023-09-30",
         "author": {
@@ -38,7 +38,7 @@
     {
         "postId": 4,
         "title": "Kirke väsis ära",
-        "image": "res/images/kirke3.jpg",
+        "image": "/kirke3.jpg",
         "tags": ["Kõrk", "Not fun", "Not blessed"],
         "createTime": "2023-10-02",
         "author": {
