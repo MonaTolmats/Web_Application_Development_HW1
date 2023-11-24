@@ -72,6 +72,14 @@ export default {
   height: auto; /* Maintains the aspect ratio of the image */
   border-radius: 10px; /* Optional: for rounded corners */
 }
+
+.post {
+  background-color: #dac7c7; /* Light gray background */
+  padding: 15px; /* Space inside each post container */
+  margin-bottom: 20px; /* Space between each post */
+  border-radius: 10px; /* Rounded corners for the container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
    
 
 </style>
