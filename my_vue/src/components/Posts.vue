@@ -11,7 +11,9 @@
         <div>
           <img v-if="post.image" class="post_image" :src="post.image" :alt="post.title">
           <p class="post_text">{{ post.title }}</p>
-          <img class="post_logo" src="/like.png" alt="Like button">
+          <button @click="incrementLikesAsync">
+            <img class="post_logo" src="/like.png" alt="Like button">
+          </button>
           <p>Likes: {{ getLikes }}</p>
         </div>
       </div>
@@ -38,7 +40,9 @@ export default {
   },
   computed: {
     ...mapState(['posts', 'count']), // Maps state.posts to this.posts
-    ...mapGetters(['getLikes']),
+    getLikes() {
+      return this.$store.state.l;
+    },
   },
   created() {
     this.fetchPosts(); // Fetch posts when the component is created
@@ -46,6 +50,12 @@ export default {
   methods: { // Maps actions.fetchPosts to this.fetchPosts
     ...mapMutations(['increment', 'resetLikes']),
     ...mapActions(['fetchPosts', 'incrementAsync', 'incrementLikesAsync', 'resetAllLikes']),
+    incrementLikes() {
+      this.$store.commit('incrementLikes');
+    },
+    resetAllLikes() {
+      this.$store.commit('resetLikes');
+    },
   }
 }
 </script>
