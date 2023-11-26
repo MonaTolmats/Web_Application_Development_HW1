@@ -1,42 +1,55 @@
+// store.js
 const store = new Vuex.Store({
-    state: {
-      count: 0,
-      likes: 0,
+  state: {
+    count: 0,
+    posts: [],
+  },
+  mutations: {
+    increment(state) {
+      state.count++;
     },
-    mutations: {
-      increment(state) {
-        state.count++;
-      },
-      incrementLikes(state) {
-        state.likes++;
-      },
-      resetLikes(state) {
-        state.likes = 0;
-      },
+    incrementLikes(state, postId) {
+      const post = state.posts.find((p) => p.postId === postId);
+      if (post) {
+        post.likes++;
+      }
     },
-    actions: {
-      incrementAsync({ commit }) {
-        setTimeout(() => {
-          commit('increment');
-        }, 1000);
-      },
-      incrementLikesAsync({ commit }) {
-        setTimeout(() => {
-          commit('incrementLikes');
-        }, 1000);
-      },
-      resetAllLikes({ commit }) {
-        commit('resetLikes');
-      },
+    resetLikes(state) {
+      state.posts.forEach((post) => {
+        post.likes = 0;
+      });
     },
-    getters: {
-      getCount: (state) => {
-        return state.count;
-      },
-      getLikes: (state) => {
-        return state.likes;
-      },
+    setPosts(state, posts) {
+      state.posts = posts;
     },
-  });
-  
-  export default store;
+  },
+  actions: {
+    incrementAsync({ commit }) {
+      setTimeout(() => {
+        commit('increment');
+      }, 1000);
+    },
+    incrementLikesAsync({ commit }, postId) {
+      setTimeout(() => {
+        commit('incrementLikes', postId);
+      }, 1000);
+    },
+    resetAllLikes({ commit }) {
+      commit('resetLikes');
+    },
+    fetchPosts({ commit }) {
+      fetch('/posts.json')
+        .then((response) => response.json())
+        .then((data) => {
+          commit('setPosts', data);
+        })
+        .catch((error) => console.error('Error fetching posts:', error));
+    },
+  },
+  getters: {
+    getCount: (state) => state.count,
+    getLikes: (state) => state.posts.reduce((totalLikes, post) => totalLikes + post.likes, 0),
+  },
+});
+
+export default store;
