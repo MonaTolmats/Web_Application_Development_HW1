@@ -1,5 +1,4 @@
 <template>
-
   <div class="container">
     <left-sidebar></left-sidebar>
     <div id="postsContainer">
@@ -11,10 +10,10 @@
         <div>
           <img v-if="post.image" class="post_image" :src="post.image" :alt="post.title">
           <p class="post_text">{{ post.title }}</p>
-          <button @click="incrementLikesAsync">
-            <img class="post_logo" src="/like.png" alt="Like button">
+          <button class="like_button" @click="incrementLikes(post)">
+            <img src="/like.png" alt="Like button">
           </button>
-          <p>Likes: {{ getLikes }}</p>
+          <p>Likes: {{ post.likeCount || 0 }}</p>
         </div>
       </div>
     </div>
@@ -24,12 +23,11 @@
   <footer-component></footer-component>
 </template>
 
-
 <script>
-import { mapState, mapActions, mapGetters, mapMutations} from 'vuex';
-import FooterComponent from '@/components/Footer.vue'
-import LeftSidebar from '@/components/LeftSidebar.vue'
-import RightSidebar from '@/components/RightSidebar.vue'
+import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
+import FooterComponent from '@/components/Footer.vue';
+import LeftSidebar from '@/components/LeftSidebar.vue';
+import RightSidebar from '@/components/RightSidebar.vue';
 
 export default {
   name: 'PostsContainer',
@@ -47,50 +45,60 @@ export default {
   created() {
     this.fetchPosts(); // Fetch posts when the component is created
   },
-  methods: { // Maps actions.fetchPosts to this.fetchPosts
+  methods: {
     ...mapMutations(['increment', 'resetLikes']),
     ...mapActions(['fetchPosts', 'incrementAsync', 'incrementLikesAsync', 'resetAllLikes']),
-    incrementLikes() {
-      this.$store.commit('incrementLikes');
+    incrementLikes(post) {
+      this.incrementLikesAsync(post.postId);
+      post.likeCount = Number.isNaN(post.likeCount) ? 1 : post.likeCount + 1;
     },
     resetAllLikes() {
-      this.$store.commit('resetLikes');
+      this.resetLikes();
+      // Reset likeCount for each post to 0
+      this.posts.forEach((post) => {
+        post.likeCount = 0;
+      });
     },
-  }
-}
+  },
+};
 </script>
 
-
-
 <style scoped>
-.container{
-    display: flex;
-    justify-content: space-between;
-    top: 0%;
-    padding-top: 9px;
-    padding-bottom: 9px;
-
+.container {
+  display: flex;
+  justify-content: space-between;
+  top: 0%;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
-.post_logo, .like_button {
+.post_logo,
+.like_button img {
   /* Adjust the size as needed */
-  width: 25px; 
+  width: 25px;
   height: 25px;
 }
 
 .post_image {
-  max-width: 50%; /* Ensures the image is not wider than its container */
-  height: auto; /* Maintains the aspect ratio of the image */
-  border-radius: 10px; /* Optional: for rounded corners */
+  max-width: 50%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .post {
-  background-color: #dac7c7; /* Light gray background */
-  padding: 15px; /* Space inside each post container */
-  margin-bottom: 20px; /* Space between each post */
-  border-radius: 10px; /* Rounded corners for the container */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #dac7c7;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-   
 
+.like_button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+}
 </style>
