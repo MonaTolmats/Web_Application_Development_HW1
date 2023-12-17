@@ -7,11 +7,11 @@
       <h3>Sign In</h3>
       <div class="input">
         <label>Email address</label>
-        <input type="email" class="textbox" />
+        <input type="email" class="textbox" required v-model="email"/>
       </div>
       <div class="input">
         <label>Password</label>
-        <input type="password" class="textbox" v-model="password" />
+        <input type="password" class="textbox" required v-model="password" />
       </div>
 
     <!-- Kui passwordError ei ole tühi string siis lisab kuvatavasse listi iga eksisteeriva errori -->
@@ -19,7 +19,12 @@
         <li v-for="error in getErrors()" :key="error">{{ error }}</li>
       </ul>
 
-      <button type="submit" class="submit_button">Sign Up</button>
+    <div class="buttons">
+      <button @click="LogIn" type="submit" class="submit_button">LogIn</button>
+      <p>or</p>
+      <button @click='this.$router.push("/signup")' type="submit" class="submit_button">Signup</button>
+    </div>
+
     </form>
   </div>
 </template>
@@ -109,6 +114,7 @@ margin-bottom: 50px;
   background-color: #343a40;
   color: #fff;
   padding: 10px;
+  margin: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -128,4 +134,17 @@ label {
 .error li {
   margin-bottom: 5px; /* Adjust margin between error messages */
 }
+
+.center {
+  margin: auto;
+  border: 0;
+  padding: 10px 20px;
+  margin-top: 20px;
+  width: 30%; 
+}
+
+.buttons {
+  display: inline;
+}
+
 </style>
