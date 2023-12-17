@@ -28,9 +28,16 @@ import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
 import FooterComponent from '@/components/Footer.vue';
 import LeftSidebar from '@/components/LeftSidebar.vue';
 import RightSidebar from '@/components/RightSidebar.vue';
+import auth from "../auth";
 
 export default {
   name: 'PostsContainer',
+  data: function() {
+    return {
+    posts:[ ],
+    authResult: auth.authenticated()
+    }
+  },
   components: {
     LeftSidebar,
     RightSidebar,
@@ -57,6 +64,23 @@ export default {
       // Reset likeCount for each post to 0
       this.posts.forEach((post) => {
         post.likeCount = 0;
+      });
+    },
+    Logout() {
+      fetch("http://localhost:3000/auth/logout", {
+          credentials: 'include', //  Don't forget to specify this if you need cookies
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log('jwt removed');
+        //console.log('jwt removed:' + auth.authenticated());
+        this.$router.push("/login");
+        //location.assign("/");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error logout");
       });
     },
   },
